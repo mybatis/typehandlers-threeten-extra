@@ -24,7 +24,7 @@ import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.Minutes;
 
 /**
- * Type Handler for threeten-extra Minutes
+ * Type Handler for ThreeTen-Extra's {@link Minutes}.
  * 
  * @author Björn Raupach
  */

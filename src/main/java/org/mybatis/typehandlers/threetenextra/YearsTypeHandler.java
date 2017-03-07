@@ -24,7 +24,7 @@ import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.Years;
 
 /**
- * Type handler for threeten-extra Years
+ * Type handler for ThreeTen-Extra's {@link Years}.
  * 
  * @author Björn Raupach
  */

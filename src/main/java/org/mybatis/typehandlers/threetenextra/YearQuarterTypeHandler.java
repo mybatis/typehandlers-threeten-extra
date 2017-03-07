@@ -24,7 +24,7 @@ import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.YearQuarter;
 
 /**
- * Type Handler for threeten-extra YearQuarter
+ * Type Handler for ThreeTen-Extra's {@link YearQuarter}.
  * 
  * @author Björn Raupach
  */

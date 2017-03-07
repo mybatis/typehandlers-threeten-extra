@@ -24,7 +24,7 @@ import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.Months;
 
 /**
- * Type handler for threeten-extra Months
+ * Type handler for ThreeTen-Extra's {@link Months}.
  * @author Björn Raupach
  */
 public class MonthsTypeHandler extends BaseTypeHandler<Months> {
