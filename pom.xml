@@ -31,37 +31,37 @@
   <packaging>jar</packaging>
 
   <name>mybatis-typehandlers-threeten-extra</name>
-  <description>MyBatis Type Handlers supporting Threeten-Extra</description>
-  <url>https://github.com/mybatis/typehandlers-threeten-etxra</url>
+  <description>MyBatis Type Handlers supporting ThreeTen-Extra</description>
+  <url>https://github.com/mybatis/typehandlers-threeten-extra</url>
 
   <inceptionYear>2017</inceptionYear>
 
   <scm>
-    <url>http://github.com/mybatis/typehandlers-threeten-etxra</url>
-    <connection>scm:git:ssh://github.com/mybatis/typehandlers-threeten-etxra.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-etxra.git</developerConnection>
+    <url>http://github.com/mybatis/typehandlers-threeten-extra</url>
+    <connection>scm:git:ssh://github.com/mybatis/typehandlers-threeten-extra.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issue Management</system>
-    <url>https://github.com/mybatis/typehandlers-threeten-etxra/issues</url>
+    <url>https://github.com/mybatis/typehandlers-threeten-extra/issues</url>
   </issueManagement>
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/mybatis/typehandlers-threeten-etxra</url>
+    <url>https://travis-ci.org/mybatis/typehandlers-threeten-extra</url>
   </ciManagement>
   <distributionManagement>
     <site>
       <id>gh-pages</id>
       <name>Mybatis GitHub Pages</name>
-      <url>git:ssh://git@github.com/mybatis/typehandlers-threeten-etxra.git?gh-pages#</url>
+      <url>git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git?gh-pages#</url>
     </site>
   </distributionManagement>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <osgi.export>org.apache.mybatis.typehandlers.threetenextra;version=${project.version};-noimport:=true</osgi.export>
+    <osgi.export>org.mybatis.typehandlers.threetenextra;version=${project.version};-noimport:=true</osgi.export>
     <signature.artifact>java18</signature.artifact>
     <signature.version>1.0</signature.version>
   </properties>
