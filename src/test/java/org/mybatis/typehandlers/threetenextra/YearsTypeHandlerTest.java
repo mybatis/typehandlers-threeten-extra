@@ -29,20 +29,20 @@ import org.threeten.extra.Years;
 public class YearsTypeHandlerTest extends BaseTypeHandlerTest {
 
     private static final TypeHandler<Years> TYPE_HANDLER = new YearsTypeHandler();
-    private static final Years INSTANT = Years.ZERO;
+    private static final Years YEARS = Years.ZERO;
 
     @Override
     @Test
     public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, INSTANT, null);
-        verify(ps).setInt(1, INSTANT.getAmount());
+        TYPE_HANDLER.setParameter(ps, 1, YEARS, null);
+        verify(ps).setInt(1, YEARS.getAmount());
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getInt("column")).thenReturn(INSTANT.getAmount());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, "column"));
+        when(rs.getInt("column")).thenReturn(YEARS.getAmount());
+        assertEquals(YEARS, TYPE_HANDLER.getResult(rs, "column"));
     }
 
     @Override
@@ -56,8 +56,8 @@ public class YearsTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getInt(1)).thenReturn(INSTANT.getAmount());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, 1));
+        when(rs.getInt(1)).thenReturn(YEARS.getAmount());
+        assertEquals(YEARS, TYPE_HANDLER.getResult(rs, 1));
     }
 
     @Override
@@ -71,8 +71,8 @@ public class YearsTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getInt(1)).thenReturn(INSTANT.getAmount());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(cs, 1));
+        when(cs.getInt(1)).thenReturn(YEARS.getAmount());
+        assertEquals(YEARS, TYPE_HANDLER.getResult(cs, 1));
     }
 
     @Override

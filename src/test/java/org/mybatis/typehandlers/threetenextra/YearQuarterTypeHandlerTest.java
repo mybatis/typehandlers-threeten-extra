@@ -30,20 +30,20 @@ import org.threeten.extra.YearQuarter;
 public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     
     private static final TypeHandler<YearQuarter> TYPE_HANDLER = new YearQuarterTypeHandler();
-    private static final YearQuarter INSTANT = YearQuarter.now();
+    private static final YearQuarter YEAR_QUARTER = YearQuarter.now();
 
     @Override
     @Test
     public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, INSTANT, null);
-        verify(ps).setString(1, INSTANT.toString());
+        TYPE_HANDLER.setParameter(ps, 1, YEAR_QUARTER, null);
+        verify(ps).setString(1, YEAR_QUARTER.toString());
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getString("column")).thenReturn(INSTANT.toString());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, "column"));
+        when(rs.getString("column")).thenReturn(YEAR_QUARTER.toString());
+        assertEquals(YEAR_QUARTER, TYPE_HANDLER.getResult(rs, "column"));
     }
 
     @Override
@@ -57,8 +57,8 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getString(1)).thenReturn(INSTANT.toString());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, 1));
+        when(rs.getString(1)).thenReturn(YEAR_QUARTER.toString());
+        assertEquals(YEAR_QUARTER, TYPE_HANDLER.getResult(rs, 1));
     }
 
     @Override
@@ -72,8 +72,8 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getString(1)).thenReturn(INSTANT.toString());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(cs, 1));
+        when(cs.getString(1)).thenReturn(YEAR_QUARTER.toString());
+        assertEquals(YEAR_QUARTER, TYPE_HANDLER.getResult(cs, 1));
     }
 
     @Override
