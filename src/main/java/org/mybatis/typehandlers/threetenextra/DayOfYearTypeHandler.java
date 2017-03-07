@@ -24,7 +24,7 @@ import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.DayOfYear;
 
 /**
- * Type Handler for threeten-extra DayOfYear
+ * Type Handler for ThreeTen-Extra's {@link DayOfYear}.
  * 
  * @author Björn Raupach
  */

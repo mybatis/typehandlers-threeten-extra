@@ -24,7 +24,7 @@ import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.Days;
 
 /**
- * Type Handler for threeten-extra Days
+ * Type Handler for ThreeTen-Extra's {@link Days}.
  * 
  * @author Björn Raupach
  */
