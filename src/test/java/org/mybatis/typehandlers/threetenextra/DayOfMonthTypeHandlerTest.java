@@ -30,20 +30,20 @@ import org.threeten.extra.DayOfMonth;
 public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
 
     private static final TypeHandler<DayOfMonth> TYPE_HANDLER = new DayOfMonthTypeHandler();
-    private static final DayOfMonth INSTANT = DayOfMonth.now();
+    private static final DayOfMonth DAY_OF_MONTH = DayOfMonth.now();
 
     @Override
     @Test
     public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, INSTANT, null);
-        verify(ps).setInt(1, INSTANT.getValue());
+        TYPE_HANDLER.setParameter(ps, 1, DAY_OF_MONTH, null);
+        verify(ps).setInt(1, DAY_OF_MONTH.getValue());
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getInt("column")).thenReturn(INSTANT.getValue());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, "column"));
+        when(rs.getInt("column")).thenReturn(DAY_OF_MONTH.getValue());
+        assertEquals(DAY_OF_MONTH, TYPE_HANDLER.getResult(rs, "column"));
     }
 
     @Override
@@ -57,8 +57,8 @@ public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getInt(1)).thenReturn(INSTANT.getValue());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, 1));
+        when(rs.getInt(1)).thenReturn(DAY_OF_MONTH.getValue());
+        assertEquals(DAY_OF_MONTH, TYPE_HANDLER.getResult(rs, 1));
     }
 
     @Override
@@ -72,8 +72,8 @@ public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getInt(1)).thenReturn(INSTANT.getValue());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(cs, 1));
+        when(cs.getInt(1)).thenReturn(DAY_OF_MONTH.getValue());
+        assertEquals(DAY_OF_MONTH, TYPE_HANDLER.getResult(cs, 1));
     }
 
     @Override

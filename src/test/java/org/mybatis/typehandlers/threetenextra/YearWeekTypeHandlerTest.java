@@ -30,20 +30,20 @@ import org.threeten.extra.YearWeek;
 public class YearWeekTypeHandlerTest extends BaseTypeHandlerTest {
     
     private static final TypeHandler<YearWeek> TYPE_HANDLER = new YearWeekTypeHandler();
-    private static final YearWeek INSTANT = YearWeek.now();
+    private static final YearWeek YEAR_WEEK = YearWeek.now();
 
     @Override
     @Test
     public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, INSTANT, null);
-        verify(ps).setString(1, INSTANT.toString());
+        TYPE_HANDLER.setParameter(ps, 1, YEAR_WEEK, null);
+        verify(ps).setString(1, YEAR_WEEK.toString());
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getString("column")).thenReturn(INSTANT.toString());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, "column"));
+        when(rs.getString("column")).thenReturn(YEAR_WEEK.toString());
+        assertEquals(YEAR_WEEK, TYPE_HANDLER.getResult(rs, "column"));
     }
 
     @Override
@@ -57,8 +57,8 @@ public class YearWeekTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getString(1)).thenReturn(INSTANT.toString());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(rs, 1));
+        when(rs.getString(1)).thenReturn(YEAR_WEEK.toString());
+        assertEquals(YEAR_WEEK, TYPE_HANDLER.getResult(rs, 1));
     }
 
     @Override
@@ -72,8 +72,8 @@ public class YearWeekTypeHandlerTest extends BaseTypeHandlerTest {
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getString(1)).thenReturn(INSTANT.toString());
-        assertEquals(INSTANT, TYPE_HANDLER.getResult(cs, 1));
+        when(cs.getString(1)).thenReturn(YEAR_WEEK.toString());
+        assertEquals(YEAR_WEEK, TYPE_HANDLER.getResult(cs, 1));
     }
 
     @Override
