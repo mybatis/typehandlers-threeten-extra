@@ -5,23 +5,56 @@
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/org.mybatis/mybatis-typehandlers-threeten-extra/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.mybatis/mybatis-typehandlers-threeten-extra)
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-The following type handlers are supported:
+![mybatis](http://mybatis.github.io/images/mybatis-logo.png)
+
+The MyBatis type handlers supporting types of [ThreeTen-Extra](http://www.threeten.org/threeten-extra/).
+
+## Installation
+
+If you are using Maven add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>org.mybatis</groupId>
+  <artifactId>mybatis-typehandlers-threeten-extra</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+If you are using Gradle add the following dependency to your `build.gradle`:
+
+```groovy
+compile("org.mybatis:mybatis-typehandlers-threeten-extra:1.0.0")
+```
+
+## Configuration
+
+Add following configuration to your `mybatis-config.xml`:
 
 ```xml
 <typeHandlers>
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.DayOfMonthTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.DayOfYearTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.DaysTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.HoursTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.MinutesTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.MonthsTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.WeeksTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.YearQuarterTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.YearWeekTypeHandler" />
-  <typeHandler handler="org.mybatis.typehandlers.threetenextra.YearsTypeHandler" />
+  <!-- ... -->
+  <package name="org.mybatis.typehandlers.threetenextra"/>
 </typeHandlers>
 ```
 
-# References
+## Supported types
 
-* [ThreeTen-Extra](http://www.threeten.org/threeten-extra/)
+The following type handlers are supported:
+
+| Type handler | ThreeTen-Extra type | JDBC types |
+| ------------ | ------------------- | ---------- |
+| `DayOfMonthTypeHandler` | `org.threeten.extra.DayOfMonth` | `INTEGER` |
+| `DayOfYearTypeHandler` | `org.threeten.extra.DayOfYear` | `INTEGER` |
+| `MinutesTypeHandler` | `org.threeten.extra.Minutes` | `INTEGER` |
+| `HoursTypeHandler` | `org.threeten.extra.Hours` | `INTEGER` |
+| `DaysTypeHandler` | `org.threeten.extra.Days` | `INTEGER` |
+| `WeeksTypeHandler` | `org.threeten.extra.Weeks` | `INTEGER` |
+| `MonthsTypeHandler` | `org.threeten.extra.Months` | `INTEGER` |
+| `YearsTypeHandler` | `org.threeten.extra.Years` | `INTEGER` |
+| `YearWeekTypeHandler` | `org.threeten.extra.YearWeek` | `VARCHAR` or `LONGVARCHAR` |
+| `YearQuarterTypeHandler` | `org.threeten.extra.YearQuarter` | `VARCHAR` or `LONGVARCHAR` |
+
+> **Note:**
+>
+> For more details of type handler, please refer to "[MyBatis 3 REFERENCE DOCUMENTATION](http://www.mybatis.org/mybatis-3/configuration.html#typeHandlers)".
