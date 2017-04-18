@@ -17,12 +17,12 @@ package org.mybatis.typehandlers.threetenextra;
 
 import java.time.DateTimeException;
 import org.apache.ibatis.type.TypeHandler;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import org.threeten.extra.DayOfMonth;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import org.threeten.extra.DayOfMonth;
 
 /**
  * @author Björn Raupach
@@ -43,7 +43,7 @@ public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
         when(rs.getInt("column")).thenReturn(DAY_OF_MONTH.getValue());
-        assertEquals(DAY_OF_MONTH, TYPE_HANDLER.getResult(rs, "column"));
+        assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(DAY_OF_MONTH);
     }
 
     @Override
@@ -51,14 +51,14 @@ public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromResultSetByName() throws Exception {
         when(rs.getInt("column")).thenReturn(0);
         when(rs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(rs, "column"));
+        assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
         when(rs.getInt(1)).thenReturn(DAY_OF_MONTH.getValue());
-        assertEquals(DAY_OF_MONTH, TYPE_HANDLER.getResult(rs, 1));
+        assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(DAY_OF_MONTH);
     }
 
     @Override
@@ -66,14 +66,14 @@ public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromResultSetByPosition() throws Exception {
         when(rs.getInt(1)).thenReturn(0);
         when(rs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(rs, 1));
+        assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
     }
 
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
         when(cs.getInt(1)).thenReturn(DAY_OF_MONTH.getValue());
-        assertEquals(DAY_OF_MONTH, TYPE_HANDLER.getResult(cs, 1));
+        assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(DAY_OF_MONTH);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class DayOfMonthTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromCallableStatement() throws Exception {
         when(cs.getInt(1)).thenReturn(0);
         when(cs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(cs, 1));
+        assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
     }
     
     @Test(expected = DateTimeException.class)

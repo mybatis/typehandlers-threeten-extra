@@ -17,12 +17,12 @@ package org.mybatis.typehandlers.threetenextra;
 
 import java.time.DateTimeException;
 import org.apache.ibatis.type.TypeHandler;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import org.threeten.extra.YearQuarter;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import org.threeten.extra.YearQuarter;
 
 /**
  * @author Björn Raupach
@@ -43,7 +43,7 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
         when(rs.getString("column")).thenReturn(YEAR_QUARTER.toString());
-        assertEquals(YEAR_QUARTER, TYPE_HANDLER.getResult(rs, "column"));
+        assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(YEAR_QUARTER);
     }
 
     @Override
@@ -51,14 +51,14 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromResultSetByName() throws Exception {
         when(rs.getString("column")).thenReturn(null);
         when(rs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(rs, "column"));
+        assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
         when(rs.getString(1)).thenReturn(YEAR_QUARTER.toString());
-        assertEquals(YEAR_QUARTER, TYPE_HANDLER.getResult(rs, 1));
+        assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(YEAR_QUARTER);
     }
 
     @Override
@@ -66,14 +66,14 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromResultSetByPosition() throws Exception {
         when(rs.getString(1)).thenReturn(null);
         when(rs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(rs, 1));
+        assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
     }
 
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
         when(cs.getString(1)).thenReturn(YEAR_QUARTER.toString());
-        assertEquals(YEAR_QUARTER, TYPE_HANDLER.getResult(cs, 1));
+        assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(YEAR_QUARTER);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromCallableStatement() throws Exception {
         when(cs.getString(1)).thenReturn(null);
         when(cs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(cs, 1));
+        assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
     }
     
     @Test(expected = DateTimeException.class)

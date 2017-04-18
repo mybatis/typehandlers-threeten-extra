@@ -16,12 +16,12 @@
 package org.mybatis.typehandlers.threetenextra;
 
 import org.apache.ibatis.type.TypeHandler;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import org.threeten.extra.Months;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import org.threeten.extra.Months;
 
 /**
  * @author Björn Raupach
@@ -42,7 +42,7 @@ public class MonthsTypeHandlerTest extends BaseTypeHandlerTest {
     @Test
     public void shouldGetResultFromResultSetByName() throws Exception {
         when(rs.getInt("column")).thenReturn(MONTHS.getAmount());
-        assertEquals(MONTHS, TYPE_HANDLER.getResult(rs, "column"));
+        assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(MONTHS);
     }
 
     @Override
@@ -50,14 +50,14 @@ public class MonthsTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromResultSetByName() throws Exception {
         when(rs.getInt("column")).thenReturn(0);
         when(rs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(rs, "column"));
+        assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
     }
 
     @Override
     @Test
     public void shouldGetResultFromResultSetByPosition() throws Exception {
         when(rs.getInt(1)).thenReturn(MONTHS.getAmount());
-        assertEquals(MONTHS, TYPE_HANDLER.getResult(rs, 1));
+        assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(MONTHS);
     }
 
     @Override
@@ -65,14 +65,14 @@ public class MonthsTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromResultSetByPosition() throws Exception {
         when(rs.getInt(1)).thenReturn(0);
         when(rs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(rs, 1));
+        assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
     }
 
     @Override
     @Test
     public void shouldGetResultFromCallableStatement() throws Exception {
         when(cs.getInt(1)).thenReturn(MONTHS.getAmount());
-        assertEquals(MONTHS, TYPE_HANDLER.getResult(cs, 1));
+        assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(MONTHS);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class MonthsTypeHandlerTest extends BaseTypeHandlerTest {
     public void shouldGetResultNullFromCallableStatement() throws Exception {
         when(cs.getInt(1)).thenReturn(0);
         when(cs.wasNull()).thenReturn(true);
-        assertNull(TYPE_HANDLER.getResult(cs, 1));
+        assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
     }
     
     
