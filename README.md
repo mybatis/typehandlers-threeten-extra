@@ -46,6 +46,7 @@ The following type handlers are supported:
 | ------------ | ------------------- | ---------- |
 | `DayOfMonthTypeHandler` | `org.threeten.extra.DayOfMonth` | `INTEGER` |
 | `DayOfYearTypeHandler` | `org.threeten.extra.DayOfYear` | `INTEGER` |
+| `SecondsTypeHandler` | `org.threeten.extra.Seconds` | `INTEGER` |
 | `MinutesTypeHandler` | `org.threeten.extra.Minutes` | `INTEGER` |
 | `HoursTypeHandler` | `org.threeten.extra.Hours` | `INTEGER` |
 | `DaysTypeHandler` | `org.threeten.extra.Days` | `INTEGER` |
