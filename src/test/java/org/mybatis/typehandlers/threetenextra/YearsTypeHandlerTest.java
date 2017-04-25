@@ -28,59 +28,60 @@ import static org.mockito.Mockito.when;
  */
 public class YearsTypeHandlerTest extends BaseTypeHandlerTest {
 
-    private static final TypeHandler<Years> TYPE_HANDLER = new YearsTypeHandler();
-    private static final Years YEARS = Years.ZERO;
+  private static final TypeHandler<Years> TYPE_HANDLER = new YearsTypeHandler();
 
-    @Override
-    @Test
-    public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, YEARS, null);
-        verify(ps).setInt(1, YEARS.getAmount());
-    }
+  private static final Years YEARS = Years.ZERO;
 
-    @Override
-    @Test
-    public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getInt("column")).thenReturn(YEARS.getAmount());
-        assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(YEARS);
-    }
+  @Override
+  @Test
+  public void shouldSetParameter() throws Exception {
+    TYPE_HANDLER.setParameter(ps, 1, YEARS, null);
+    verify(ps).setInt(1, YEARS.getAmount());
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromResultSetByName() throws Exception {
-        when(rs.getInt("column")).thenReturn(0);
-        when(rs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
-    }
+  @Override
+  @Test
+  public void shouldGetResultFromResultSetByName() throws Exception {
+    when(rs.getInt("column")).thenReturn(YEARS.getAmount());
+    assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(YEARS);
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getInt(1)).thenReturn(YEARS.getAmount());
-        assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(YEARS);
-    }
+  @Override
+  @Test
+  public void shouldGetResultNullFromResultSetByName() throws Exception {
+    when(rs.getInt("column")).thenReturn(0);
+    when(rs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromResultSetByPosition() throws Exception {
-        when(rs.getInt(1)).thenReturn(0);
-        when(rs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
-    }
+  @Override
+  @Test
+  public void shouldGetResultFromResultSetByPosition() throws Exception {
+    when(rs.getInt(1)).thenReturn(YEARS.getAmount());
+    assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(YEARS);
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getInt(1)).thenReturn(YEARS.getAmount());
-        assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(YEARS);
-    }
+  @Override
+  @Test
+  public void shouldGetResultNullFromResultSetByPosition() throws Exception {
+    when(rs.getInt(1)).thenReturn(0);
+    when(rs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromCallableStatement() throws Exception {
-        when(cs.getInt(1)).thenReturn(0);
-        when(cs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
-    }
-    
+  @Override
+  @Test
+  public void shouldGetResultFromCallableStatement() throws Exception {
+    when(cs.getInt(1)).thenReturn(YEARS.getAmount());
+    assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(YEARS);
+  }
+
+  @Override
+  @Test
+  public void shouldGetResultNullFromCallableStatement() throws Exception {
+    when(cs.getInt(1)).thenReturn(0);
+    when(cs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
+  }
+
 }

@@ -28,60 +28,61 @@ import static org.mockito.Mockito.when;
  * @author Björn Raupach
  */
 public class MinutesTypeHandlerTest extends BaseTypeHandlerTest {
-    
-    private static final TypeHandler<Minutes> TYPE_HANDLER = new MinutesTypeHandler();
-    private static final Minutes MINUTES = Minutes.ZERO;
 
-    @Override
-    @Test
-    public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, MINUTES, null);
-        verify(ps).setInt(1, MINUTES.getAmount());
-    }
+  private static final TypeHandler<Minutes> TYPE_HANDLER = new MinutesTypeHandler();
 
-    @Override
-    @Test
-    public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getInt("column")).thenReturn(MINUTES.getAmount());
-        assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(MINUTES);
-    }
+  private static final Minutes MINUTES = Minutes.ZERO;
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromResultSetByName() throws Exception {
-        when(rs.getInt("column")).thenReturn(0);
-        when(rs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
-    }
+  @Override
+  @Test
+  public void shouldSetParameter() throws Exception {
+    TYPE_HANDLER.setParameter(ps, 1, MINUTES, null);
+    verify(ps).setInt(1, MINUTES.getAmount());
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getInt(1)).thenReturn(MINUTES.getAmount());
-        assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(MINUTES);
-    }
+  @Override
+  @Test
+  public void shouldGetResultFromResultSetByName() throws Exception {
+    when(rs.getInt("column")).thenReturn(MINUTES.getAmount());
+    assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(MINUTES);
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromResultSetByPosition() throws Exception {
-        when(rs.getInt(1)).thenReturn(0);
-        when(rs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
-    }
+  @Override
+  @Test
+  public void shouldGetResultNullFromResultSetByName() throws Exception {
+    when(rs.getInt("column")).thenReturn(0);
+    when(rs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getInt(1)).thenReturn(MINUTES.getAmount());
-        assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(MINUTES);
-    }
+  @Override
+  @Test
+  public void shouldGetResultFromResultSetByPosition() throws Exception {
+    when(rs.getInt(1)).thenReturn(MINUTES.getAmount());
+    assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(MINUTES);
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromCallableStatement() throws Exception {
-        when(cs.getInt(1)).thenReturn(0);
-        when(cs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
-    }
-    
+  @Override
+  @Test
+  public void shouldGetResultNullFromResultSetByPosition() throws Exception {
+    when(rs.getInt(1)).thenReturn(0);
+    when(rs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
+  }
+
+  @Override
+  @Test
+  public void shouldGetResultFromCallableStatement() throws Exception {
+    when(cs.getInt(1)).thenReturn(MINUTES.getAmount());
+    assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(MINUTES);
+  }
+
+  @Override
+  @Test
+  public void shouldGetResultNullFromCallableStatement() throws Exception {
+    when(cs.getInt(1)).thenReturn(0);
+    when(cs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
+  }
+
 }

@@ -30,27 +30,27 @@ import org.threeten.extra.DayOfMonth;
  */
 public class DayOfMonthTypeHandler extends BaseTypeHandler<DayOfMonth> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, DayOfMonth dayOfMonth, JdbcType type) throws SQLException {
-        ps.setInt(parameterIndex, dayOfMonth.getValue());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, DayOfMonth dayOfMonth, JdbcType type) throws SQLException {
+    ps.setInt(parameterIndex, dayOfMonth.getValue());
+  }
 
-    @Override
-    public DayOfMonth getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int dayOfMonth = rs.getInt(columnName);
-        return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
-    }
+  @Override
+  public DayOfMonth getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    int dayOfMonth = rs.getInt(columnName);
+    return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
+  }
 
-    @Override
-    public DayOfMonth getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int dayOfMonth = rs.getInt(columnIndex);
-        return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
-    }
+  @Override
+  public DayOfMonth getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    int dayOfMonth = rs.getInt(columnIndex);
+    return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
+  }
 
-    @Override
-    public DayOfMonth getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int dayOfMonth = cs.getInt(columnIndex);
-        return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
-    }
-    
+  @Override
+  public DayOfMonth getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    int dayOfMonth = cs.getInt(columnIndex);
+    return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
+  }
+
 }

@@ -28,66 +28,67 @@ import static org.mockito.Mockito.when;
  * @author Björn Raupach
  */
 public class YearWeekTypeHandlerTest extends BaseTypeHandlerTest {
-    
-    private static final TypeHandler<YearWeek> TYPE_HANDLER = new YearWeekTypeHandler();
-    private static final YearWeek YEAR_WEEK = YearWeek.now();
 
-    @Override
-    @Test
-    public void shouldSetParameter() throws Exception {
-        TYPE_HANDLER.setParameter(ps, 1, YEAR_WEEK, null);
-        verify(ps).setString(1, YEAR_WEEK.toString());
-    }
+  private static final TypeHandler<YearWeek> TYPE_HANDLER = new YearWeekTypeHandler();
 
-    @Override
-    @Test
-    public void shouldGetResultFromResultSetByName() throws Exception {
-        when(rs.getString("column")).thenReturn(YEAR_WEEK.toString());
-        assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(YEAR_WEEK);
-    }
+  private static final YearWeek YEAR_WEEK = YearWeek.now();
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromResultSetByName() throws Exception {
-        when(rs.getString("column")).thenReturn(null);
-        when(rs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
-    }
+  @Override
+  @Test
+  public void shouldSetParameter() throws Exception {
+    TYPE_HANDLER.setParameter(ps, 1, YEAR_WEEK, null);
+    verify(ps).setString(1, YEAR_WEEK.toString());
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultFromResultSetByPosition() throws Exception {
-        when(rs.getString(1)).thenReturn(YEAR_WEEK.toString());
-        assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(YEAR_WEEK);
-    }
+  @Override
+  @Test
+  public void shouldGetResultFromResultSetByName() throws Exception {
+    when(rs.getString("column")).thenReturn(YEAR_WEEK.toString());
+    assertThat(TYPE_HANDLER.getResult(rs, "column")).isEqualTo(YEAR_WEEK);
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromResultSetByPosition() throws Exception {
-        when(rs.getString(1)).thenReturn(null);
-        when(rs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
-    }
+  @Override
+  @Test
+  public void shouldGetResultNullFromResultSetByName() throws Exception {
+    when(rs.getString("column")).thenReturn(null);
+    when(rs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultFromCallableStatement() throws Exception {
-        when(cs.getString(1)).thenReturn(YEAR_WEEK.toString());
-        assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(YEAR_WEEK);
-    }
+  @Override
+  @Test
+  public void shouldGetResultFromResultSetByPosition() throws Exception {
+    when(rs.getString(1)).thenReturn(YEAR_WEEK.toString());
+    assertThat(TYPE_HANDLER.getResult(rs, 1)).isEqualTo(YEAR_WEEK);
+  }
 
-    @Override
-    @Test
-    public void shouldGetResultNullFromCallableStatement() throws Exception {
-        when(cs.getString(1)).thenReturn(null);
-        when(cs.wasNull()).thenReturn(true);
-        assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
-    }
-    
-    @Test(expected = DateTimeException.class)
-    public void shouldThrowDateTimeException() throws Exception {
-        when(rs.getString("column")).thenReturn("some value");
-        ((YearWeekTypeHandler)TYPE_HANDLER).getNullableResult(rs, "column");
-    }
-    
+  @Override
+  @Test
+  public void shouldGetResultNullFromResultSetByPosition() throws Exception {
+    when(rs.getString(1)).thenReturn(null);
+    when(rs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
+  }
+
+  @Override
+  @Test
+  public void shouldGetResultFromCallableStatement() throws Exception {
+    when(cs.getString(1)).thenReturn(YEAR_WEEK.toString());
+    assertThat(TYPE_HANDLER.getResult(cs, 1)).isEqualTo(YEAR_WEEK);
+  }
+
+  @Override
+  @Test
+  public void shouldGetResultNullFromCallableStatement() throws Exception {
+    when(cs.getString(1)).thenReturn(null);
+    when(cs.wasNull()).thenReturn(true);
+    assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
+  }
+
+  @Test(expected = DateTimeException.class)
+  public void shouldThrowDateTimeException() throws Exception {
+    when(rs.getString("column")).thenReturn("some value");
+    ((YearWeekTypeHandler) TYPE_HANDLER).getNullableResult(rs, "column");
+  }
+
 }

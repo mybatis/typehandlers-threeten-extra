@@ -27,8 +27,10 @@ public abstract class BaseTypeHandlerTest {
 
   @Mock
   protected ResultSet rs;
+
   @Mock
   protected PreparedStatement ps;
+
   @Mock
   protected CallableStatement cs;
 

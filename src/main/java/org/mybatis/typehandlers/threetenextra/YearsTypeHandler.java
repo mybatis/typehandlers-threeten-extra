@@ -30,27 +30,27 @@ import org.threeten.extra.Years;
  */
 public class YearsTypeHandler extends BaseTypeHandler<Years> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Years years, JdbcType type) throws SQLException {
-        ps.setInt(parameterIndex, years.getAmount());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Years years, JdbcType type) throws SQLException {
+    ps.setInt(parameterIndex, years.getAmount());
+  }
 
-    @Override
-    public Years getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int years = rs.getInt(columnName);
-        return rs.wasNull() ? null : Years.of(years);
-    }
+  @Override
+  public Years getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    int years = rs.getInt(columnName);
+    return rs.wasNull() ? null : Years.of(years);
+  }
 
-    @Override
-    public Years getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int years = rs.getInt(columnIndex);
-        return rs.wasNull() ? null : Years.of(years);
-    }
+  @Override
+  public Years getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    int years = rs.getInt(columnIndex);
+    return rs.wasNull() ? null : Years.of(years);
+  }
 
-    @Override
-    public Years getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int years = cs.getInt(columnIndex);
-        return cs.wasNull() ? null : Years.of(years);
-    }
-    
+  @Override
+  public Years getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    int years = cs.getInt(columnIndex);
+    return cs.wasNull() ? null : Years.of(years);
+  }
+
 }

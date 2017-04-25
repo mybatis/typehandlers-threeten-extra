@@ -30,27 +30,27 @@ import org.threeten.extra.Days;
  */
 public class DaysTypeHandler extends BaseTypeHandler<Days> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Days days, JdbcType type) throws SQLException {
-        ps.setInt(parameterIndex, days.getAmount());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Days days, JdbcType type) throws SQLException {
+    ps.setInt(parameterIndex, days.getAmount());
+  }
 
-    @Override
-    public Days getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int days = rs.getInt(columnName);
-        return rs.wasNull() ? null : Days.of(days);
-    }
+  @Override
+  public Days getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    int days = rs.getInt(columnName);
+    return rs.wasNull() ? null : Days.of(days);
+  }
 
-    @Override
-    public Days getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int days = rs.getInt(columnIndex);
-        return rs.wasNull() ? null : Days.of(days);
-    }
+  @Override
+  public Days getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    int days = rs.getInt(columnIndex);
+    return rs.wasNull() ? null : Days.of(days);
+  }
 
-    @Override
-    public Days getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int days = cs.getInt(columnIndex);
-        return cs.wasNull() ? null : Days.of(days);
-    }
-    
+  @Override
+  public Days getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    int days = cs.getInt(columnIndex);
+    return cs.wasNull() ? null : Days.of(days);
+  }
+
 }

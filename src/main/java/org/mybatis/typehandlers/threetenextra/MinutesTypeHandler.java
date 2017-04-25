@@ -30,27 +30,27 @@ import org.threeten.extra.Minutes;
  */
 public class MinutesTypeHandler extends BaseTypeHandler<Minutes> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Minutes minutes, JdbcType type) throws SQLException {
-        ps.setInt(parameterIndex, minutes.getAmount());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Minutes minutes, JdbcType type) throws SQLException {
+    ps.setInt(parameterIndex, minutes.getAmount());
+  }
 
-    @Override
-    public Minutes getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int minutes = rs.getInt(columnName);
-        return rs.wasNull() ? null : Minutes.of(minutes);
-    }
+  @Override
+  public Minutes getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    int minutes = rs.getInt(columnName);
+    return rs.wasNull() ? null : Minutes.of(minutes);
+  }
 
-    @Override
-    public Minutes getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int minutes = rs.getInt(columnIndex);
-        return rs.wasNull() ? null : Minutes.of(minutes);
-    }
+  @Override
+  public Minutes getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    int minutes = rs.getInt(columnIndex);
+    return rs.wasNull() ? null : Minutes.of(minutes);
+  }
 
-    @Override
-    public Minutes getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int minutes = cs.getInt(columnIndex);
-        return cs.wasNull() ? null : Minutes.of(minutes);
-    }
-    
+  @Override
+  public Minutes getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    int minutes = cs.getInt(columnIndex);
+    return cs.wasNull() ? null : Minutes.of(minutes);
+  }
+
 }

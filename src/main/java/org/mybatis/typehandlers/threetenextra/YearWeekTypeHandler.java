@@ -30,34 +30,34 @@ import org.threeten.extra.YearWeek;
  */
 public class YearWeekTypeHandler extends BaseTypeHandler<YearWeek> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, YearWeek yearWeek, JdbcType type) throws SQLException {
-        ps.setString(parameterIndex, yearWeek.toString());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, YearWeek yearWeek, JdbcType type) throws SQLException {
+    ps.setString(parameterIndex, yearWeek.toString());
+  }
 
-    @Override
-    public YearWeek getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        String str = rs.getString(columnName);
-        return getYearWeek(str);
-    }
+  @Override
+  public YearWeek getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    String str = rs.getString(columnName);
+    return getYearWeek(str);
+  }
 
-    @Override
-    public YearWeek getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        String str = rs.getString(columnIndex);
-        return getYearWeek(str);
-    }
+  @Override
+  public YearWeek getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    String str = rs.getString(columnIndex);
+    return getYearWeek(str);
+  }
 
-    @Override
-    public YearWeek getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        String str = cs.getString(columnIndex);
-        return getYearWeek(str);
+  @Override
+  public YearWeek getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    String str = cs.getString(columnIndex);
+    return getYearWeek(str);
+  }
+
+  private static YearWeek getYearWeek(String str) {
+    if (str != null) {
+      return YearWeek.parse(str);
     }
-    
-    private static YearWeek getYearWeek(String str) {
-        if (str != null) {
-            return YearWeek.parse(str);
-        }
-        return null;
-    }
-    
+    return null;
+  }
+
 }

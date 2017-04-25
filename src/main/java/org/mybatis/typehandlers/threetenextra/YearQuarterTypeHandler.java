@@ -30,34 +30,34 @@ import org.threeten.extra.YearQuarter;
  */
 public class YearQuarterTypeHandler extends BaseTypeHandler<YearQuarter> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, YearQuarter yearQuarter, JdbcType type) throws SQLException {
-        ps.setString(parameterIndex, yearQuarter.toString());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, YearQuarter yearQuarter, JdbcType type) throws SQLException {
+    ps.setString(parameterIndex, yearQuarter.toString());
+  }
 
-    @Override
-    public YearQuarter getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        String str = rs.getString(columnName);
-        return getYearQuarter(str);
-    }
+  @Override
+  public YearQuarter getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    String str = rs.getString(columnName);
+    return getYearQuarter(str);
+  }
 
-    @Override
-    public YearQuarter getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        String str = rs.getString(columnIndex);
-        return getYearQuarter(str);
-    }
+  @Override
+  public YearQuarter getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    String str = rs.getString(columnIndex);
+    return getYearQuarter(str);
+  }
 
-    @Override
-    public YearQuarter getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        String str = cs.getString(columnIndex);
-        return getYearQuarter(str);
+  @Override
+  public YearQuarter getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    String str = cs.getString(columnIndex);
+    return getYearQuarter(str);
+  }
+
+  private static YearQuarter getYearQuarter(String str) {
+    if (str != null) {
+      return YearQuarter.parse(str);
     }
-    
-    private static YearQuarter getYearQuarter(String str) {
-        if (str != null) {
-            return YearQuarter.parse(str);
-        }
-        return null;
-    }
-    
+    return null;
+  }
+
 }

@@ -25,31 +25,32 @@ import org.threeten.extra.Months;
 
 /**
  * Type handler for ThreeTen-Extra's {@link Months}.
+ * 
  * @author Björn Raupach
  */
 public class MonthsTypeHandler extends BaseTypeHandler<Months> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Months months, JdbcType type) throws SQLException {
-        ps.setInt(parameterIndex, months.getAmount());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Months months, JdbcType type) throws SQLException {
+    ps.setInt(parameterIndex, months.getAmount());
+  }
 
-    @Override
-    public Months getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int months = rs.getInt(columnName);
-        return rs.wasNull() ? null : Months.of(months);
-    }
+  @Override
+  public Months getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    int months = rs.getInt(columnName);
+    return rs.wasNull() ? null : Months.of(months);
+  }
 
-    @Override
-    public Months getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int months = rs.getInt(columnIndex);
-        return rs.wasNull() ? null : Months.of(months);
-    }
+  @Override
+  public Months getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    int months = rs.getInt(columnIndex);
+    return rs.wasNull() ? null : Months.of(months);
+  }
 
-    @Override
-    public Months getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int months = cs.getInt(columnIndex);
-        return cs.wasNull() ? null : Months.of(months);
-    }
-    
+  @Override
+  public Months getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    int months = cs.getInt(columnIndex);
+    return cs.wasNull() ? null : Months.of(months);
+  }
+
 }

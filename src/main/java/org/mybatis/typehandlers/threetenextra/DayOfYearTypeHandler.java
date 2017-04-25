@@ -30,27 +30,27 @@ import org.threeten.extra.DayOfYear;
  */
 public class DayOfYearTypeHandler extends BaseTypeHandler<DayOfYear> {
 
-    @Override
-    public void setNonNullParameter(PreparedStatement ps, int parameterIndex, DayOfYear dayOfYear, JdbcType type) throws SQLException {
-        ps.setInt(parameterIndex, dayOfYear.getValue());
-    }
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, DayOfYear dayOfYear, JdbcType type) throws SQLException {
+    ps.setInt(parameterIndex, dayOfYear.getValue());
+  }
 
-    @Override
-    public DayOfYear getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int dayOfYear = rs.getInt(columnName);
-        return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
-    }
+  @Override
+  public DayOfYear getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    int dayOfYear = rs.getInt(columnName);
+    return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
+  }
 
-    @Override
-    public DayOfYear getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int dayOfYear = rs.getInt(columnIndex);
-        return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
-    }
+  @Override
+  public DayOfYear getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    int dayOfYear = rs.getInt(columnIndex);
+    return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
+  }
 
-    @Override
-    public DayOfYear getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int dayOfYear = cs.getInt(columnIndex);
-        return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
-    }
-    
+  @Override
+  public DayOfYear getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    int dayOfYear = cs.getInt(columnIndex);
+    return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
+  }
+
 }
