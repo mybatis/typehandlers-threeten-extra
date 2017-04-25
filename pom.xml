@@ -27,7 +27,7 @@
   </parent>
 
   <artifactId>mybatis-typehandlers-threeten-extra</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>mybatis-typehandlers-threeten-extra</name>
@@ -40,7 +40,7 @@
     <url>http://github.com/mybatis/typehandlers-threeten-extra</url>
     <connection>scm:git:ssh://github.com/mybatis/typehandlers-threeten-extra.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>mybatis-typehandlers-threeten-extra-1.0.0</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issue Management</system>
