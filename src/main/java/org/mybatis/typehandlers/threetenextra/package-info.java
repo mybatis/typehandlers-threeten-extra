@@ -14,9 +14,8 @@
  *    limitations under the License.
  */
 /**
- * Type Handlers supporting types the <a target="threeten"
- * href="http://www.threeten.org/threeten-extra/">ThreeTen-Extra</a>.
+ * Type Handlers supporting types the
+ * <a target="threeten" href="http://www.threeten.org/threeten-extra/">ThreeTen-Extra</a>.
  */
 
 package org.mybatis.typehandlers.threetenextra;
-
