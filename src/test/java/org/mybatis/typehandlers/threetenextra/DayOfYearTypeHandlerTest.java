@@ -17,7 +17,8 @@ package org.mybatis.typehandlers.threetenextra;
 
 import java.time.DateTimeException;
 import org.apache.ibatis.type.TypeHandler;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.threeten.extra.DayOfYear;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -85,10 +86,12 @@ public class DayOfYearTypeHandlerTest extends BaseTypeHandlerTest {
     assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
   }
 
-  @Test(expected = DateTimeException.class)
+  @Test
   public void shouldThrowDateTimeException() throws Exception {
     when(rs.getInt("column")).thenReturn(999);
-    ((DayOfYearTypeHandler) TYPE_HANDLER).getNullableResult(rs, "column");
+    Assertions.assertThrows(DateTimeException.class, () -> {
+      ((DayOfYearTypeHandler) TYPE_HANDLER).getNullableResult(rs, "column");
+    });
   }
 
 }
