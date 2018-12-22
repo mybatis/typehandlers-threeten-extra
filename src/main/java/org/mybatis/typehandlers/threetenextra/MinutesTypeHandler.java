@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017 the original author or authors.
+ *    Copyright 2017-2018 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ import org.threeten.extra.Minutes;
 public class MinutesTypeHandler extends BaseTypeHandler<Minutes> {
 
   @Override
-  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Minutes minutes, JdbcType type) throws SQLException {
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, Minutes minutes, JdbcType type)
+      throws SQLException {
     ps.setInt(parameterIndex, minutes.getAmount());
   }
 

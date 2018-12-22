@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017 the original author or authors.
+ *    Copyright 2017-2018 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,9 @@
  *    limitations under the License.
  */
 /**
- * Type Handlers supporting types the <a target="threeten" href="http://www.threeten.org/threeten-extra/">ThreeTen-Extra</a>.
+ * Type Handlers supporting types the <a target="threeten"
+ * href="http://www.threeten.org/threeten-extra/">ThreeTen-Extra</a>.
  */
 
 package org.mybatis.typehandlers.threetenextra;
+

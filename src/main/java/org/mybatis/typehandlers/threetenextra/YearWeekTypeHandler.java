@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017 the original author or authors.
+ *    Copyright 2017-2018 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ import org.threeten.extra.YearWeek;
 public class YearWeekTypeHandler extends BaseTypeHandler<YearWeek> {
 
   @Override
-  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, YearWeek yearWeek, JdbcType type) throws SQLException {
+  public void setNonNullParameter(PreparedStatement ps, int parameterIndex, YearWeek yearWeek, JdbcType type)
+      throws SQLException {
     ps.setString(parameterIndex, yearWeek.toString());
   }
 
