@@ -17,7 +17,7 @@ package org.mybatis.typehandlers.threetenextra;
 
 import org.apache.ibatis.type.TypeHandler;
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.threeten.extra.Seconds;

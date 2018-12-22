@@ -16,7 +16,7 @@
 package org.mybatis.typehandlers.threetenextra;
 
 import org.apache.ibatis.type.TypeHandler;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.threeten.extra.Months;
 
 import static org.assertj.core.api.Assertions.assertThat;
