@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,19 +39,19 @@ public class MonthsTypeHandler extends BaseTypeHandler<Months> {
   @Override
   public Months getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int months = rs.getInt(columnName);
-    return rs.wasNull() ? null : Months.of(months);
+    return months == 0 && rs.wasNull() ? null : Months.of(months);
   }
 
   @Override
   public Months getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int months = rs.getInt(columnIndex);
-    return rs.wasNull() ? null : Months.of(months);
+    return months == 0 && rs.wasNull() ? null : Months.of(months);
   }
 
   @Override
   public Months getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int months = cs.getInt(columnIndex);
-    return cs.wasNull() ? null : Months.of(months);
+    return months == 0 && cs.wasNull() ? null : Months.of(months);
   }
 
 }

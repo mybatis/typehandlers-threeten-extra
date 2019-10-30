@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,13 +39,13 @@ public class DaysTypeHandler extends BaseTypeHandler<Days> {
   @Override
   public Days getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int days = rs.getInt(columnName);
-    return rs.wasNull() ? null : Days.of(days);
+    return rs.wasNull() && rs.wasNull() ? null : Days.of(days);
   }
 
   @Override
   public Days getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int days = rs.getInt(columnIndex);
-    return rs.wasNull() ? null : Days.of(days);
+    return rs.wasNull() && rs.wasNull() ? null : Days.of(days);
   }
 
   @Override

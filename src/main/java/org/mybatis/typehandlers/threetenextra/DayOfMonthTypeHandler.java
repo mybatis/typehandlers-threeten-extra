@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,19 +39,19 @@ public class DayOfMonthTypeHandler extends BaseTypeHandler<DayOfMonth> {
   @Override
   public DayOfMonth getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int dayOfMonth = rs.getInt(columnName);
-    return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
+    return dayOfMonth == 0 && rs.wasNull() ? null : DayOfMonth.of(dayOfMonth);
   }
 
   @Override
   public DayOfMonth getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int dayOfMonth = rs.getInt(columnIndex);
-    return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
+    return dayOfMonth == 0 && rs.wasNull() ? null : DayOfMonth.of(dayOfMonth);
   }
 
   @Override
   public DayOfMonth getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int dayOfMonth = cs.getInt(columnIndex);
-    return dayOfMonth == 0 ? null : DayOfMonth.of(dayOfMonth);
+    return dayOfMonth == 0 && cs.wasNull() ? null : DayOfMonth.of(dayOfMonth);
   }
 
 }

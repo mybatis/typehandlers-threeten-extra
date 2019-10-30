@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,19 +39,19 @@ public class YearsTypeHandler extends BaseTypeHandler<Years> {
   @Override
   public Years getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int years = rs.getInt(columnName);
-    return rs.wasNull() ? null : Years.of(years);
+    return years == 0 && rs.wasNull() ? null : Years.of(years);
   }
 
   @Override
   public Years getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int years = rs.getInt(columnIndex);
-    return rs.wasNull() ? null : Years.of(years);
+    return years == 0 && rs.wasNull() ? null : Years.of(years);
   }
 
   @Override
   public Years getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int years = cs.getInt(columnIndex);
-    return cs.wasNull() ? null : Years.of(years);
+    return years == 0 && cs.wasNull() ? null : Years.of(years);
   }
 
 }

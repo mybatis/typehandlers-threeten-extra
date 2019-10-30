@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,19 +39,19 @@ public class WeeksTypeHandler extends BaseTypeHandler<Weeks> {
   @Override
   public Weeks getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int weeks = rs.getInt(columnName);
-    return rs.wasNull() ? null : Weeks.of(weeks);
+    return weeks == 0 && rs.wasNull() ? null : Weeks.of(weeks);
   }
 
   @Override
   public Weeks getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int weeks = rs.getInt(columnIndex);
-    return rs.wasNull() ? null : Weeks.of(weeks);
+    return weeks == 0 && rs.wasNull() ? null : Weeks.of(weeks);
   }
 
   @Override
   public Weeks getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int weeks = cs.getInt(columnIndex);
-    return cs.wasNull() ? null : Weeks.of(weeks);
+    return weeks == 0 && cs.wasNull() ? null : Weeks.of(weeks);
   }
 
 }

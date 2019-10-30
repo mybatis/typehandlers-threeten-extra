@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,19 +39,19 @@ public class HoursTypeHandler extends BaseTypeHandler<Hours> {
   @Override
   public Hours getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int hours = rs.getInt(columnName);
-    return rs.wasNull() ? null : Hours.of(hours);
+    return hours == 0 && rs.wasNull() ? null : Hours.of(hours);
   }
 
   @Override
   public Hours getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int hours = rs.getInt(columnIndex);
-    return rs.wasNull() ? null : Hours.of(hours);
+    return hours == 0 && rs.wasNull() ? null : Hours.of(hours);
   }
 
   @Override
   public Hours getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int hours = cs.getInt(columnIndex);
-    return cs.wasNull() ? null : Hours.of(hours);
+    return hours == 0 && cs.wasNull() ? null : Hours.of(hours);
   }
 
 }

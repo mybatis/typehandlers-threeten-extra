@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -39,19 +39,19 @@ public class DayOfYearTypeHandler extends BaseTypeHandler<DayOfYear> {
   @Override
   public DayOfYear getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int dayOfYear = rs.getInt(columnName);
-    return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
+    return dayOfYear == 0 && rs.wasNull() ? null : DayOfYear.of(dayOfYear);
   }
 
   @Override
   public DayOfYear getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int dayOfYear = rs.getInt(columnIndex);
-    return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
+    return dayOfYear == 0 && rs.wasNull() ? null : DayOfYear.of(dayOfYear);
   }
 
   @Override
   public DayOfYear getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int dayOfYear = cs.getInt(columnIndex);
-    return dayOfYear == 0 ? null : DayOfYear.of(dayOfYear);
+    return dayOfYear == 0 && cs.wasNull() ? null : DayOfYear.of(dayOfYear);
   }
 
 }

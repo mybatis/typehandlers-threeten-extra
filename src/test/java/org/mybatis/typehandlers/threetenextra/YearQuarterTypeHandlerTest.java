@@ -1,5 +1,5 @@
 /**
- *    Copyright 2017-2018 the original author or authors.
+ *    Copyright 2017-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -52,7 +52,6 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
   @Test
   public void shouldGetResultNullFromResultSetByName() throws Exception {
     when(rs.getString("column")).thenReturn(null);
-    when(rs.wasNull()).thenReturn(true);
     assertThat(TYPE_HANDLER.getResult(rs, "column")).isNull();
   }
 
@@ -67,7 +66,6 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
   @Test
   public void shouldGetResultNullFromResultSetByPosition() throws Exception {
     when(rs.getString(1)).thenReturn(null);
-    when(rs.wasNull()).thenReturn(true);
     assertThat(TYPE_HANDLER.getResult(rs, 1)).isNull();
   }
 
@@ -82,7 +80,6 @@ public class YearQuarterTypeHandlerTest extends BaseTypeHandlerTest {
   @Test
   public void shouldGetResultNullFromCallableStatement() throws Exception {
     when(cs.getString(1)).thenReturn(null);
-    when(cs.wasNull()).thenReturn(true);
     assertThat(TYPE_HANDLER.getResult(cs, 1)).isNull();
   }
 
