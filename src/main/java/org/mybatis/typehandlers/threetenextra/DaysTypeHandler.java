@@ -39,19 +39,19 @@ public class DaysTypeHandler extends BaseTypeHandler<Days> {
   @Override
   public Days getNullableResult(ResultSet rs, String columnName) throws SQLException {
     int days = rs.getInt(columnName);
-    return rs.wasNull() && rs.wasNull() ? null : Days.of(days);
+    return days == 0 && rs.wasNull() ? null : Days.of(days);
   }
 
   @Override
   public Days getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     int days = rs.getInt(columnIndex);
-    return rs.wasNull() && rs.wasNull() ? null : Days.of(days);
+    return days == 0 && rs.wasNull() ? null : Days.of(days);
   }
 
   @Override
   public Days getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     int days = cs.getInt(columnIndex);
-    return cs.wasNull() ? null : Days.of(days);
+    return days == 0 && cs.wasNull() ? null : Days.of(days);
   }
 
 }
