@@ -61,6 +61,9 @@
   <properties>
     <osgi.export>org.mybatis.typehandlers.threetenextra;version=${project.version};-noimport:=true</osgi.export>
     <module.name>org.mybatis.typehandlers.threeten.extra</module.name>
+
+    <!-- Remove after parent 32 (support for jdk 13) -->
+    <jacoco.version>0.8.4</jacoco.version>
   </properties>
 
   <dependencies>
