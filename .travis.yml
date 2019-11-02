@@ -6,6 +6,10 @@ jdk:
   - openjdk11
   - openjdk8
 
+cache:
+  directories:
+    - $HOME/.m2
+
 script:
   - ./mvnw test
   - ./mvnw test -Dmybatis.version=3.4.6
