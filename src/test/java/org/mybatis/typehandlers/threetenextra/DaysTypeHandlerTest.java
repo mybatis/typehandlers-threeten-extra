@@ -15,13 +15,13 @@
  */
 package org.mybatis.typehandlers.threetenextra;
 
-import org.apache.ibatis.type.TypeHandler;
-import org.junit.jupiter.api.Test;
-import org.threeten.extra.Days;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import org.apache.ibatis.type.TypeHandler;
+import org.junit.jupiter.api.Test;
+import org.threeten.extra.Days;
 
 /**
  * @author Björn Raupach

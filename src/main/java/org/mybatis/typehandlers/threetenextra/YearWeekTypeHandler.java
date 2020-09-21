@@ -19,13 +19,14 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.threeten.extra.YearWeek;
 
 /**
  * Type Handler for ThreeTen-Extra's {@link YearWeek}.
- * 
+ *
  * @author Björn Raupach
  */
 public class YearWeekTypeHandler extends BaseTypeHandler<YearWeek> {
