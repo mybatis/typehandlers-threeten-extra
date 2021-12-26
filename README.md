@@ -1,6 +1,6 @@
 # MyBatis Type Handlers for ThreeTen-Extra
 
-[![Build Status](https://travis-ci.org/mybatis/typehandlers-threeten-extra.svg?branch=master)](https://travis-ci.org/mybatis/typehandlers-threeten-extra)
+[![Java CI](https://github.com/mybatis/typehandlers-threeten-extra/actions/workflows/ci.yaml/badge.svg)](https://github.com/mybatis/typehandlers-threeten-extra/actions/workflows/ci.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/mybatis/typehandlers-threeten-extra/badge.svg?branch=master)](https://coveralls.io/github/mybatis/typehandlers-threeten-extra?branch=master)
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/org.mybatis/mybatis-typehandlers-threeten-extra/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.mybatis/mybatis-typehandlers-threeten-extra)
 [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.mybatis/mybatis-typehandlers-threeten-extra.svg)](https://oss.sonatype.org/content/repositories/snapshots/org/mybatis/mybatis-typehandlers-threeten-extra/)
