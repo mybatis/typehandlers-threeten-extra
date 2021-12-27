@@ -62,7 +62,7 @@
     <osgi.export>org.mybatis.typehandlers.threetenextra;version=${project.version};-noimport:=true</osgi.export>
     <module.name>org.mybatis.typehandlers.threeten.extra</module.name>
 
-    <mybatis.version>3.5.8</mybatis.version>
+    <mybatis.version>3.5.9</mybatis.version>
     <threeten-extra.version>1.7.0</threeten-extra.version>
   </properties>
 
