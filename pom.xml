@@ -47,8 +47,8 @@
     <url>https://github.com/mybatis/typehandlers-threeten-extra/issues</url>
   </issueManagement>
   <ciManagement>
-    <system>Travis CI</system>
-    <url>https://travis-ci.org/mybatis/typehandlers-threeten-extra</url>
+    <system>GitHub Actions</system>
+    <url>https://github.com/mybatis/typehandlers-threeten-extra/actions</url>
   </ciManagement>
   <distributionManagement>
     <site>
