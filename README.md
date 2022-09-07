@@ -6,7 +6,7 @@
 [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/https/oss.sonatype.org/org.mybatis/mybatis-typehandlers-threeten-extra.svg)](https://oss.sonatype.org/content/repositories/snapshots/org/mybatis/mybatis-typehandlers-threeten-extra/)
 [![License](https://img.shields.io/:license-apache-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-![mybatis](http://mybatis.github.io/images/mybatis-logo.png)
+![mybatis](https://mybatis.org/images/mybatis-logo.png)
 
 The MyBatis type handlers supporting types of [ThreeTen-Extra](https://www.threeten.org/threeten-extra/).
 
