@@ -63,7 +63,7 @@
     <module.name>org.mybatis.typehandlers.threeten.extra</module.name>
 
     <mybatis.version>3.5.11</mybatis.version>
-    <threeten-extra.version>1.7.1</threeten-extra.version>
+    <threeten-extra.version>1.7.2</threeten-extra.version>
 
     <!-- Reproducible Builds -->
     <project.build.outputTimestamp>1757561022</project.build.outputTimestamp>
