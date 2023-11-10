@@ -26,9 +26,9 @@
     <relativePath />
   </parent>
 
+  <groupId>org.mybatis</groupId>
   <artifactId>mybatis-typehandlers-threeten-extra</artifactId>
   <version>1.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
 
   <name>mybatis-typehandlers-threeten-extra</name>
   <description>MyBatis Type Handlers supporting ThreeTen-Extra</description>
@@ -38,7 +38,7 @@
 
   <scm>
     <url>http://github.com/mybatis/typehandlers-threeten-extra</url>
-    <connection>scm:git:ssh://github.com/mybatis/typehandlers-threeten-extra.git</connection>
+    <connection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
@@ -52,9 +52,9 @@
   </ciManagement>
   <distributionManagement>
     <site>
-      <id>gh-pages</id>
+      <id>gh-pages-scm</id>
       <name>Mybatis GitHub Pages</name>
-      <url>git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git?gh-pages#</url>
+      <url>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</url>
     </site>
   </distributionManagement>
 
