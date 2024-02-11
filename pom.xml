@@ -17,6 +17,7 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -32,7 +33,7 @@
 
   <name>mybatis-typehandlers-threeten-extra</name>
   <description>MyBatis Type Handlers supporting ThreeTen-Extra</description>
-  <url>https://github.com/mybatis/typehandlers-threeten-extra</url>
+  <url>https://github.com/mybatis/typehandlers-threeten-extra/</url>
 
   <inceptionYear>2017</inceptionYear>
 
@@ -40,7 +41,7 @@
     <connection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</developerConnection>
     <tag>HEAD</tag>
-    <url>http://github.com/mybatis/typehandlers-threeten-extra</url>
+    <url>http://github.com/mybatis/typehandlers-threeten-extra/</url>
   </scm>
   <issueManagement>
     <system>GitHub Issue Management</system>
