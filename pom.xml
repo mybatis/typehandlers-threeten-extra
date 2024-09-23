@@ -29,7 +29,7 @@
 
   <groupId>org.mybatis</groupId>
   <artifactId>mybatis-typehandlers-threeten-extra</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.0</version>
 
   <name>mybatis-typehandlers-threeten-extra</name>
   <description>MyBatis Type Handlers supporting ThreeTen-Extra</description>
@@ -40,7 +40,7 @@
   <scm>
     <connection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mybatis/typehandlers-threeten-extra.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>mybatis-typehandlers-threeten-extra-1.1.0</tag>
     <url>http://github.com/mybatis/typehandlers-threeten-extra/</url>
   </scm>
   <issueManagement>
@@ -72,7 +72,7 @@
     <threeten-extra.version>1.8.0</threeten-extra.version>
 
     <!-- Reproducible Builds -->
-    <project.build.outputTimestamp>1757561022</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1727051301</project.build.outputTimestamp>
   </properties>
 
   <dependencies>
