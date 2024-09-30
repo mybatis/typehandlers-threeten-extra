@@ -68,7 +68,7 @@
     <module.name>org.mybatis.typehandlers.threeten.extra</module.name>
 
     <mybatis.version>3.5.16</mybatis.version>
-    <mockito.version>5.14.0</mockito.version>
+    <mockito.version>5.14.1</mockito.version>
     <threeten-extra.version>1.8.0</threeten-extra.version>
 
     <!-- Reproducible Builds -->
