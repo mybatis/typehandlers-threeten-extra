@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,SecondsTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,YearQuarterTypeHandler,0,37,0,2,0,12,0,7,0,6
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,DayOfMonthTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,HoursTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,MinutesTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,YearWeekTypeHandler,0,37,0,2,0,12,0,7,0,6
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,DayOfYearTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,YearsTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,DaysTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,MonthsTypeHandler,0,51,3,9,0,9,3,8,0,5
+mybatis-typehandlers-threeten-extra,org.mybatis.typehandlers.threetenextra,WeeksTypeHandler,0,51,3,9,0,9,3,8,0,5
