@@ -69,7 +69,7 @@
 
     <mybatis.version>3.5.19</mybatis.version>
     <mockito.version>5.23.0</mockito.version>
-    <threeten-extra.version>1.9.0</threeten-extra.version>
+    <threeten-extra.version>1.10.0</threeten-extra.version>
 
     <!-- Reproducible Builds -->
     <project.build.outputTimestamp>1765750413</project.build.outputTimestamp>
